@@ -1,5 +1,13 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
+The Web Service Instance is weak, there are something with it
+- It associate with WebAppSG security group with inbound rules to allow all traffic 
+- It is using http with port 80. we should use https with port 443
+- It is in public subnet, opening to the public internet with port 5000
 
 # Poor practice 2
+InstanceRolePolicy-C3 IAM role policy is using wildcards (s3:*) to open full controle on S3 bucket which is effect two buckets:
+- cand-c3-free-recipes-580754497650
+- cand-c3-secret-recipes-580754497650
+
