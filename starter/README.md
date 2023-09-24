@@ -11,8 +11,7 @@ In this project, you will:
 ## Dependencies and Prerequisites
  
 ### Access to AWS account  
-Students will need to use either their personal AWS account or the federated user account provided by Udacity (if available to you). In either case, you need to track your usage and expenditure on [AWS Billing Dashboard](https://console.aws.amazon.com/billing/home#/) regularly. Remember, all AWS services are a pay-as-you-go service, so shut down/delete every AWS resource immediately after the usage or if you are stepping away for a few hours. 
-
+Students will need to use their personal AWS accounts.  Udacity will provide a $100 credit for any usage costs. If project instructions are followed we do not anticipate usage costs to exceed this amount.
  
 ### Installation of the AWS CLI and Local Setup of AWS API keys
 Instructions and examples in this project will make use of the AWS CLI in order to automate and reduce time and complexity.
@@ -35,7 +34,7 @@ In this task, the objective is to familiarize yourself with the starting archite
  
 The diagram file, title `AWS-WebServiceDiagram-v1-insecure.png`, can be found in the _starter_ directory in this repo.
  
-![base environment](starter/AWS-WebServiceDiagram-v1-insecure.png)
+![base environment](AWS-WebServiceDiagram-v1-insecure.png)
  
 #### Expected user flow:
 - Clients will invoke a public-facing web service to pull free recipes.  
@@ -69,7 +68,7 @@ Additionally, we have provided a CloudFormation template which will deploy the f
 ### Task 3: Deployment of Initial Infrastructure
 In this task, the objective is to deploy the CloudFormation stacks that will create the below environment.
  
-![base environment](starter/AWS-WebServiceDiagram-v1-insecure.png)
+![base environment](AWS-WebServiceDiagram-v1-insecure.png)
  
  
 We will utilize the AWS CLI in this guide, however you are welcome to use the AWS console to deploy the CloudFormation templates.
@@ -116,7 +115,7 @@ Expected example output:
 Expected example AWS Console status: 
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks
  
-![Expected AWS Console Status](starter/cloudformation_status.png)
+![Expected AWS Console Status](cloudformation_status.png)
  
 #### 2. Once you see Status is CREATE_COMPLETE for all 3 stacks, obtain the required parameters needed for the project.
  
@@ -132,7 +131,7 @@ Note down the names of the two other buckets that have been created, one for fre
  
 You can get these from the Outputs section of the **c3-app** stack.
  
-![Outputs](starter/outputs.png)
+![Outputs](outputs.png)
  
 #### 3.  Upload data to S3 buckets
 Upload the free recipes to the free recipe S3 bucket from step 2. Do this by typing this command into the console (you will replace `<BucketNameRecipesFree>` with your bucket name):
@@ -179,7 +178,7 @@ First, we will set up security monitoring to ensure that the AWS account and env
  
 #### 1. Enable AWS Config (skip this step if you already have it enabled)  
  a. See below screenshot for the initial settings.   
- ![ConfigEnabled](starter/config_enable.png)  
+ ![ConfigEnabled](config_enable.png)  
  b. On the Rules page, click **Skip**.  
  c. On the Review page, click **Confirm**.
 #### 2. Enable AWS Security Hub
@@ -187,12 +186,12 @@ First, we will set up security monitoring to ensure that the AWS account and env
 b. On the next page, click **Enable Security Hub**
 #### 3. Enable AWS Inspector scan
  a. From the Inspector service landing page, leave the defaults and click **Advanced**.  
- ![Inspector1](starter/inspector_setup_runonce.png)  
+ ![Inspector1](inspector_setup_runonce.png)  
  b. Uncheck **All Instances** and **Install Agents**.  
  c. Choose Name for Key and ‘Web Services Instance - C3’ for value, click **Next**.  
- ![Inspector2](starter/inspector_setup_2.png)  
+ ![Inspector2](inspector_setup_2.png)  
  d. Edit the rules packages as seen in the screenshot below.  
- ![Inspector3](starter/inspector_setup_3.png)  
+ ![Inspector3](inspector_setup_3.png)  
  e. Uncheck **Assessment Schedule**.  
  f. Set a duration of 15 minutes.
  g. Click **Next** and **Create**.
@@ -244,7 +243,7 @@ hydra -l ubuntu -P rockyou.txt ssh://<YourApplicationServerDnsNameHere>
  
 You should see output similar to the following:
 		
-![Brute Force](starter/brute_force.png)
+![Brute Force](brute_force.png)
  
 Wait 10 - 15 minutes and check AWS Guard Duty.
  
@@ -414,7 +413,7 @@ Brainstorm and list additional hardening suggestions aside from those implemente
 
 Take a look at a very common deployment pipeline diagrammed below:
 
-![DevOpsPipeline](starter/DevOpsPipeline.png)
+![DevOpsPipeline](DevOpsPipeline.png)
 
 The high-level steps are as follows:
 
