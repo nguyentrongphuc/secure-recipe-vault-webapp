@@ -1,0 +1,7 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+- In order to detect the brute attack via SSH, the AWS Guard Duty findings it thru the VPC Flow logs where having information about traffic going to and from the EC2 network interfaces.
+- Beside that, AWS Guard Duty monitors data from AWS CloudTrail, DNS Logs,... 
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+- https://repost.aws/knowledge-center/identify-attacks-with-guardduty
+- https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html

@@ -1,0 +1,31 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+- Regula
+- Checkov: https://www.checkov.io/
+- Terrafirma: https://github.com/wayfair/terrafirma
+- CFRipper
+
+### Example vulnerability
+- SSH open to internet 
+- Overly permission 
+- regula rules: https://regula.dev/rules.html
+
+
+##Scan AMI’s or containers for OS vulnerabilities
+- Amazon Inspector
+- Amazon ECR
+
+### Example vulnerability
+- Checks for outdated OS version as OS security patches are not up-to-date.
+- Malware in the image
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+- AWS Inspector
+- AWS Config
+- AWS Security Hub 
+
+### Example vulnerability
+- IAM policies has over permission
+- Checks whether Security Groups with 0.0.0.0/0 allow only specific inbound TCP or UDP traffic.
+- MFA (Multi-Factor Authentication) is NOT enabled for root account
